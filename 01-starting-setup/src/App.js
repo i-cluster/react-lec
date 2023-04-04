@@ -1,3 +1,4 @@
+import ExpenseFilter from "./components/Expenses/ExpenseFilter";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 
@@ -29,9 +30,14 @@ const App = () => {
     console.log(expense)
   }
 
+  const filterControlHandler = filter => {
+    console.log(filter)
+  }
+
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
+      <ExpenseFilter onFilterControl={filterControlHandler} />
       <Expenses items={expenses} />
     </div>
   )
